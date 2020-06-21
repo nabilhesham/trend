@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% if trendData2 %}
+    <ul>
+      {% if trendData1 %} {% for trend in trendData1 %}
+      <li>
+        {{trend.name}} {{trend.region}} {{trend.interest}}
+      </li>
+      {% endfor %} {% endif %}
+    </ul>
+    <ul>
+      {% for trend in trendData2 %}
+      <li>
+        {{trend.name}} {{trend.region}} {{trend.interest}}
+      </li>
+      {% endfor %} {% else%}
+      <ul>
+        {% if trendData1 %} {% for trend in trendData1 %}
+        <li>
+          {{trend.name}} {{trend.date}} {{trend.interest}}
+        </li>
+        {% endfor %} {% endif %}
+      </ul>
+      {% endif %}
+    </ul>
+  </body>
+</html>
